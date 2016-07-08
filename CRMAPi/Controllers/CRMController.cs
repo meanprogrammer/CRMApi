@@ -13,9 +13,11 @@ namespace KuyaTest.Controllers
         // GET api/crm
         public HttpResponseMessage Get()
         {
+
+            Random rndgen = new Random();
             return new HttpResponseMessage()
             {
-                Content = new StringContent("plain String")
+                Content = new StringContent(rndgen.Next().ToString())
             };
         }
 
