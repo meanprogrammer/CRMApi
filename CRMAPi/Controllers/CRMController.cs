@@ -4,15 +4,16 @@ using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
+using System.Web.Mvc;
 
 namespace KuyaTest.Controllers
 {
-    public class CRMController : ApiController
+    public class CRMController : Controller
     {
         // GET api/crm
-        public string Get()
+        public ActionResult Get()
         {
-            return "test";
+            return Content("Hi there!");
         }
 
         // GET api/crm/5
