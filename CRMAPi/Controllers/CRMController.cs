@@ -8,12 +8,15 @@ using System.Web.Mvc;
 
 namespace KuyaTest.Controllers
 {
-    public class CRMController : Controller
+    public class CRMController : ApiController
     {
         // GET api/crm
-        public ActionResult Get()
+        public HttpResponseMessage Get()
         {
-            return Content("Hi there!");
+            return new HttpResponseMessage()
+            {
+                Content = new StringContent("plain String")
+            };
         }
 
         // GET api/crm/5
