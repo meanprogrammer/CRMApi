@@ -22,24 +22,40 @@ namespace KuyaTest.Controllers
         }
 
         // GET api/crm/5
-        public string Get(int id)
+        public HttpResponseMessage Get(int id)
         {
-            return "value";
+            string value = string.Format("{0}-{1}-{2}", id,id,id);
+            return new HttpResponseMessage()
+            {
+                Content = new StringContent( value )
+            };
         }
 
         // POST api/crm
-        public void Post([FromBody]string value)
+        public HttpResponseMessage Post([FromBody]string value)
         {
+            return new HttpResponseMessage()
+            {
+                Content = new StringContent("SOMETHING IS POSTED!")
+            };
         }
 
         // PUT api/crm/5
-        public void Put(int id, [FromBody]string value)
+        public HttpResponseMessage Put(int id, [FromBody]string value)
         {
+            return new HttpResponseMessage()
+            {
+                Content = new StringContent("PUT PUT PUT")
+            };
         }
 
         // DELETE api/crm/5
-        public void Delete(int id)
+        public HttpResponseMessage Delete(int id)
         {
+            return new HttpResponseMessage()
+            {
+                Content = new StringContent("DEL DEL DEL")
+            };
         }
     }
 }
