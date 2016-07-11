@@ -11,6 +11,7 @@ namespace KuyaTest.Controllers
     public class CRMController : ApiController
     {
         // GET api/crm
+        [System.Web.Http.HttpGet, System.Web.Http.Route("api/crm/get")]
         public HttpResponseMessage Get()
         {
 
@@ -22,6 +23,7 @@ namespace KuyaTest.Controllers
         }
 
         // GET api/crm/5
+        [System.Web.Http.HttpGet, System.Web.Http.Route("api/crm/get/{id}")]
         public HttpResponseMessage Get(int id)
         {
             string value = string.Format("{0}-{1}-{2}", id,id,id);
@@ -32,6 +34,7 @@ namespace KuyaTest.Controllers
         }
 
         // POST api/crm
+        [System.Web.Http.HttpPost, System.Web.Http.Route("api/crm/post")]
         public HttpResponseMessage Post([FromBody]string value)
         {
             return new HttpResponseMessage()
@@ -40,7 +43,7 @@ namespace KuyaTest.Controllers
             };
         }
 
-        // PUT api/crm/5
+        [System.Web.Http.HttpPost, System.Web.Http.Route("api/crm/put")]
         public HttpResponseMessage Put(int id, [FromBody]string value)
         {
             return new HttpResponseMessage()
@@ -49,7 +52,7 @@ namespace KuyaTest.Controllers
             };
         }
 
-        // DELETE api/crm/5
+        [System.Web.Http.HttpPost, System.Web.Http.Route("api/crm/delete")]
         public HttpResponseMessage Delete(int id)
         {
             return new HttpResponseMessage()
