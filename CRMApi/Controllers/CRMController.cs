@@ -43,7 +43,7 @@ namespace DudzAPI.Controllers
             };
         }
 
-        [System.Web.Http.HttpPost, System.Web.Http.Route("api/crm/put")]
+        [System.Web.Http.HttpPut, System.Web.Http.Route("api/crm/put")]
         public HttpResponseMessage Put([FromBody]string value)
         {
             return new HttpResponseMessage()
@@ -52,7 +52,7 @@ namespace DudzAPI.Controllers
             };
         }
 
-        [System.Web.Http.HttpPost, System.Web.Http.Route("api/crm/delete")]
+        [System.Web.Http.HttpDelete, System.Web.Http.Route("api/crm/delete")]
         public HttpResponseMessage Delete([FromBody]int id)
         {
             return new HttpResponseMessage()
