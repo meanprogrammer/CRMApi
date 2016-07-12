@@ -39,7 +39,7 @@ namespace DudzAPI.Controllers
         {
             return new HttpResponseMessage()
             {
-                Content = new StringContent("SOMETHING IS POSTED!")
+                Content = new StringContent(string.Format("POSTED: {0}", value))
             };
         }
 
@@ -48,7 +48,7 @@ namespace DudzAPI.Controllers
         {
             return new HttpResponseMessage()
             {
-                Content = new StringContent("PUT PUT PUT")
+                Content = new StringContent(string.Format("PUT: {0}", value))
             };
         }
 
@@ -57,7 +57,7 @@ namespace DudzAPI.Controllers
         {
             return new HttpResponseMessage()
             {
-                Content = new StringContent("DEL DEL DEL")
+                Content = new StringContent(string.Format("DEL DEL DEL : {0}", id))
             };
         }
     }
