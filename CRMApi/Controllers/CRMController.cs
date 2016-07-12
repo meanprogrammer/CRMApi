@@ -1,4 +1,6 @@
-﻿using System;
+﻿using DudzAPI.Models;
+using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net.Http;
@@ -37,9 +39,10 @@ namespace DudzAPI.Controllers
         [System.Web.Http.HttpPost, System.Web.Http.Route("api/crm/post")]
         public HttpResponseMessage Post([FromBody]string value)
         {
+            IntegrationModel m = JsonConvert.DeserializeObject(value) as IntegrationModel;
             return new HttpResponseMessage()
             {
-                Content = new StringContent(string.Format("POSTED: {0}", value))
+                Content = new StringContent(string.Format("POSTED: {0}", m.Description))
             };
         }
 

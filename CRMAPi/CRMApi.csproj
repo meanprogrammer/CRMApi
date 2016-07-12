@@ -208,6 +208,7 @@
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\CounterParty.cs" />
     <Compile Include="Models\IdentityModels.cs" />
+    <Compile Include="Models\IntegrationModel.cs" />
     <Compile Include="Models\SubLimit.cs" />
     <Compile Include="Models\TFPLimit.cs" />
     <Compile Include="Models\TFPParam.cs" />
