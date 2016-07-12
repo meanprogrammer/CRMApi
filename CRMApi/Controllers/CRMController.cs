@@ -7,6 +7,7 @@ using System.Net.Http;
 using System.Web;
 using System.Web.Http;
 using System.Web.Mvc;
+using System.Web.Script.Serialization;
 
 namespace DudzAPI.Controllers
 {
@@ -16,7 +17,6 @@ namespace DudzAPI.Controllers
         [System.Web.Http.HttpGet, System.Web.Http.Route("api/crm/get")]
         public HttpResponseMessage Get()
         {
-
             Random rndgen = new Random();
             return new HttpResponseMessage()
             {
@@ -37,12 +37,12 @@ namespace DudzAPI.Controllers
 
         // POST api/crm
         [System.Web.Http.HttpPost, System.Web.Http.Route("api/crm/post")]
-        public HttpResponseMessage Post([FromBody]string value)
+        public HttpResponseMessage Post(IntegrationModel value)
         {
-            IntegrationModel m = JsonConvert.DeserializeObject(value) as IntegrationModel;
+            //IntegrationModel m = JsonConvert.DeserializeObject(value) as IntegrationModel;
             return new HttpResponseMessage()
             {
-                Content = new StringContent(string.Format("POSTED: {0}", m.Description))
+                Content = new StringContent(string.Format("POSTED: {0}", value.Description))
             };
         }
 
