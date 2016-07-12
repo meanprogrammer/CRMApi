@@ -47,11 +47,11 @@ namespace DudzAPI.Controllers
         }
 
         [System.Web.Http.HttpPut, System.Web.Http.Route("api/crm/put")]
-        public HttpResponseMessage Put([FromBody]string value)
+        public HttpResponseMessage Put(IntegrationModel value)
         {
             return new HttpResponseMessage()
             {
-                Content = new StringContent(string.Format("PUT: {0}", value))
+                Content = new StringContent(string.Format("PUT: {0} : {1}", value.RecordID, value.Description))
             };
         }
 
